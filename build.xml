@@ -1,8 +1,14 @@
 <project name="Sample usage of Salesforce Ant tasks" default="deployCode" basedir="." xmlns:sf="antlib:com.salesforce">
-
+<taskdef uri="antlib:com.salesforce" classpath="/usr/share/ant/lib/ant-salesforce.jar"/>
 
     <!-- Shows deploying code & running tests for code in directory -->
     <target name="deployCode">
+      <!-- Upload the contents of the "codepkg" directory, running the tests for just 1 class -->
+      <sf:deploy username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" deployRoot="codepkg" rollbackOnError="true">
+      </sf:deploy>
+    </target>
+
+    <target name="deploy">
       <!-- Upload the contents of the "codepkg" directory, running the tests for just 1 class -->
       <sf:deploy username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" deployRoot="codepkg" rollbackOnError="true">
       </sf:deploy>
