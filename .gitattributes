@@ -14,4 +14,4 @@
 *.rtf	 diff=astextplain
 *.RTF	 diff=astextplain
 *.site   diff=astextplain
-*.site[[:space:]] filter=lfs diff=lfs merge=lfs -text
+*.site filter=lfs diff=lfs merge=lfs -text
